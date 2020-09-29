@@ -1,37 +1,56 @@
 package com.functional.testing;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.generic.library.DriverManager;
+import com.generic.library.ModulesValidation;
+import com.generic.library.TitleOfPages;
 
 public class TestExecution {
 
-	@Test
-	public void test01() {
-		//code	
+	WebDriver driver;
+
+	@BeforeTest
+	public void test1() {
+
+		driver = new DriverManager().getBrower();
 
 	}
 
 	@Test
-	public void test02() {
+	public void test2() {
 
-		// code
+		new ModulesValidation().getModules(driver);
+
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 
-	@Test
-	public void test03() {
+	// why this driver got null??
 
-		// code
-	}
-
-	@Test
-	public void test04() {
-
-		// code
-	}
-
-	@Test
-	public void test05() {
-
-		// code
-	}
-
+	/*
+	 * @Test public void test4() throws InterruptedException {
+	 * 
+	 * // code System.out.println("Test 4 started"); TitleOfPages.getTitle(driver);
+	 * }
+	 * 
+	 * @Test public void test05() {
+	 * 
+	 * // code }
+	 */
 }
